@@ -1,0 +1,139 @@
+:root {
+  --col-width: 200px;
+}
+
+@font-face {
+  font-family: 'Fira Code';
+  font-style: normal;
+  font-weight: normal;
+  src: url(../fonts/FiraCode-Regular.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Fira Code';
+  font-style: normal;
+  font-weight: bold;
+  src: url(../fonts/FiraCode-Bold.ttf) format('truetype');
+}
+
+.container {
+  margin: 40px 20px 20px;
+}
+
+* {
+  font-family: 'Fira Code', sans-serif;
+}
+
+body {
+  background-color: #333;
+  padding: 0;
+  margin: 0;
+  color: #fef3c7;
+  line-height: 1.3;
+}
+
+.search {
+  width: 50%;
+  margin: 0 auto 50px;
+  position: relative;
+}
+
+.search__line {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  border: 3px solid #fef3c7;
+  color: #fef3c7;
+  font-size: 19px;
+  background-color: #222;
+  outline: none;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.suggestions {
+  display: none;
+  position: absolute;
+  z-index: 1;
+  background-color: #222;
+  width: 100%;
+  border: 3px solid #fef3c7;
+  border-top: none;
+  border-bottom: none;
+  box-sizing: border-box;
+}
+
+.search__line:focus ~ .suggestions {
+  display: block;
+}
+
+.suggestion {
+  padding: 7px 12px;
+  cursor: pointer;
+}
+
+.suggestion:last-child {
+  border-bottom: 3px solid #fef3c7;
+}
+
+.suggestion:hover {
+  background-color: #444;
+}
+
+.suggestion-active {
+  background: #444;
+}
+
+.categories {
+  font-size: 18px;
+  position: relative;
+  opacity: 0;
+}
+
+.category {
+  border: 3px solid #fef3c7;
+  width: var(--col-width);
+  background-color: #222;
+  color: #fef3c7;
+  position: absolute;
+  box-sizing: border-box;
+}
+
+.category__name {
+  padding: 10px 14px;
+  border-bottom: 3px solid #fef3c7;
+  text-align: center;
+  font-weight: bold;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.links {
+  padding: 10px 7px;
+}
+
+.link {
+  display: block;
+  color: #fef3c7;
+  text-decoration: none;
+  padding: 2px 7px;
+  width: 100%;
+  box-sizing: border-box;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.link:hover {
+  background-color: #444;
+}
+
+.bg-filter {
+  display: none;
+  position: absolute;
+  inset: 0;
+  background-color: #333;
+  opacity: 0;
+  transition: 0.2s;
+}
