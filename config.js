@@ -1,14 +1,6 @@
 const gap = 20;
 const colWidth = 200;
 const hotkeyLeader = ':';
-const usePreCalculatedHeights = false;
-
-// if `usePreCalculatedHeights` is true
-const emptyCategoryHeight = 70.6;
-const linkHeight = 27.4;
-
-// if `usePreCalculatedHeights` is false
-const delayBeforePlacingCategories = 30;
 
 const categories = [
   {

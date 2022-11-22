@@ -117,8 +117,6 @@ function google(q = elems.input.value) {
 // ===== Masonry =====
 
 function createMasonry() {
-  elems.categories.style.opacity = 0;
-
   const containerWidth = elems.container.offsetWidth;
   const colsCount = Math.floor((containerWidth + gap) / (colWidth + gap));
   const colsHeight = [...Array(colsCount)].map(() => 0);
@@ -128,21 +126,15 @@ function createMasonry() {
   elems.categories.style.marginLeft = `${sidePadding}px`;
   elems.categories.style.marginRight = `${sidePadding}px`;
 
-  document.querySelectorAll('.category').forEach((elem, i) => {
+  document.querySelectorAll('.category').forEach((elem) => {
     const min = colsHeight.reduce(
       (acc, colHeight, i) => (colHeight < acc.value ? { colIndex: i, value: colHeight } : acc),
       { colIndex: -1, value: Number.MAX_SAFE_INTEGER }
     );
 
     elem.style.cssText = `top: ${min.value}px; left: ${(colWidth + gap) * min.colIndex}px;`;
-
-    colsHeight[min.colIndex] += usePreCalculatedHeights
-      ? emptyCategoryHeight + categories[i].links.length * linkHeight
-      : elem.offsetHeight;
-    colsHeight[min.colIndex] += gap;
+    colsHeight[min.colIndex] += elem.offsetHeight + gap;
   });
-
-  elems.categories.style.opacity = 1;
 }
 
 // ===== Initializing App =====
@@ -150,9 +142,7 @@ function createMasonry() {
 window.addEventListener('load', () => {
   elems.categories.innerHTML = createHtmlList(createCategory, categories);
 
-  delayBeforePlacingCategories
-    ? setTimeout(createMasonry, delayBeforePlacingCategories)
-    : createMasonry();
-
+  const ro = new ResizeObserver(createMasonry);
+  document.querySelectorAll('.category').forEach((elem) => ro.observe(elem));
   window.addEventListener('resize', createMasonry);
 });
