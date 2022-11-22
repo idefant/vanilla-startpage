@@ -26,9 +26,9 @@ You can use shortcuts by adding a colon to the beginning. For example, by typing
 ```js
 const categories = [
   {
-    name: 'Social',
+    name: 'About_Project',
     links: [
-      { name: 'Gmail', url: 'https://mail.google.com/', hotkey: 'gm' },
+      { name: 'Repo', url: 'https://github.com/idefant/vanilla-startpage', hotkey: 'gh' },
       // ...
     ],
   },
@@ -57,7 +57,7 @@ const categories = [
 
 When trying to get suggestions from google, the `CORS Missing Allow Origin` problem occurs. The browser prohibits sending a request to the domain `https://suggestqueries.google.com/`. To solve this, you need to disable CORS for this domain.
 
-⚠ All actions are performed only at your own risk! ⚠
+**⚠ All actions are performed only at your own risk! ⚠**
 
 - Install [Simple Modify Headers](https://github.com/didierfred/SimpleModifyHeaders) for [Firefox](https://addons.mozilla.org/ru/firefox/addon/simple-modify-header/) or [Chrome](https://chrome.google.com/webstore/detail/simple-modify-headers/gjgiipmpldkpbdfjkgofildhapegmmic)
 - Open the addon page
@@ -76,7 +76,7 @@ When trying to get suggestions from google, the `CORS Missing Allow Origin` prob
 
 Firefox does not allow you to open custom start pages in a new tab. If you need it, after performing the actions from the list above, do these actions.
 
-⚠ All actions are performed only at your own risk! ⚠
+**⚠ All actions are performed only at your own risk! ⚠**
 
 - Disable extensions that change the new tab page (such as New Tab Override)
 - Create an `autoconfig.cfg` file and fill it with the following contents (pass a link to a local file to the `newTabURL` variable):
