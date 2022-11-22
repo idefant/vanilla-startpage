@@ -6,7 +6,7 @@ const categories = [
   {
     name: 'About_Project',
     links: [
-      { name: 'Repo', url: 'https://github.com/idefant/vanilla-startpage' },
+      { name: 'Repo', url: 'https://github.com/idefant/vanilla-startpage', hotkey: 'gh' },
       { name: 'My_Github_Profile', url: 'https://github.com/idefant' },
       { name: 'My_Website', url: 'https://idefant.ru' },
     ],
