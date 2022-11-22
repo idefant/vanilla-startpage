@@ -123,7 +123,7 @@ function createMasonry() {
   const colsCount = Math.floor((containerWidth + gap) / (colWidth + gap));
   const colsHeight = [...Array(colsCount)].map(() => 0);
 
-  const colsSumWidth = (colWidth + gap) * colsCount - gap;
+  const colsSumWidth = (colWidth + gap) * Math.min(colsCount, categories.length) - gap;
   const sidePadding = (containerWidth - colsSumWidth) / 2;
   elems.categories.style.marginLeft = `${sidePadding}px`;
   elems.categories.style.marginRight = `${sidePadding}px`;
