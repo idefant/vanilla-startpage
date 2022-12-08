@@ -31,9 +31,9 @@ function createLink(link) {
 }
 
 function createSuggestion(suggestion) {
-  return `<div class="suggestion" onclick="google('${suggestion}')">
+  return `<button class="suggestion" onclick="google('${suggestion}')" type="button">
     ${suggestion}
-  </div>`;
+  </button>`;
 }
 
 async function fetchSuggestions(searchValue) {
