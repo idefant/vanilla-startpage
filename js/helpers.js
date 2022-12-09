@@ -31,7 +31,7 @@ function createLink(link) {
 }
 
 function createSuggestion(suggestion) {
-  return `<button class="suggestion" onclick="google('${suggestion}')" type="button">
+  return `<button class="suggestion" onclick="search('${suggestion}')" type="button">
     ${suggestion}
   </button>`;
 }

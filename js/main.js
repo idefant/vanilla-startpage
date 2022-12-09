@@ -102,13 +102,19 @@ elems.form.addEventListener('submit', (e) => {
     return;
   }
 
-  google();
+  search();
 });
 
-function google(q = elems.input.value) {
+function search(q = elems.input.value) {
   searchValue = q;
-  window.location.href = `https://www.google.com/search?q=${q}`;
-  clearSuggestions();
+  try {
+    const url = new URL(q);
+    window.location.href = url.href;
+  } catch {
+    window.location.href = `https://www.google.com/search?q=${q}`;
+  } finally {
+    clearSuggestions();
+  }
 }
 
 // ===== Masonry =====
