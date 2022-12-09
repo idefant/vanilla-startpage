@@ -2,6 +2,11 @@ const gap = 20;
 const colWidth = 200;
 const hotkeyLeader = ':';
 
+const mappings = {
+  suggestionNext: 'ctrl+j, alt+j, ArrowDown',
+  suggestionPrev: 'ctrl+k, alt+k, ArrowUp',
+};
+
 const categories = [
   {
     name: 'About_Project',

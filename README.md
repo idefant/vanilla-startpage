@@ -41,6 +41,7 @@ const categories = [
 - **gap** - distance between columns
 - **colWidth** - column width (and the `--col-width` variable in `main.css`)
 - **hotkeyLeader** - shortcut leader
+- **mappings** - list of hotkeys
 - **categories** - List of categories
 
 

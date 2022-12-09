@@ -43,17 +43,14 @@ function navigateThroughSuggestions(direction) {
   }
 }
 
-elems.input.addEventListener('keydown', (e) => {
-  const actions = {
-    ArrowUp: () => navigateThroughSuggestions(-1),
-    ArrowDown: () => navigateThroughSuggestions(1),
-  };
+hotkey(mappings.suggestionNext, () => navigateThroughSuggestions(1), {
+  elem: elems.input,
+  preventDefault: true,
+});
 
-  const action = actions[e.code];
-  if (action) {
-    e.preventDefault();
-    action();
-  }
+hotkey(mappings.suggestionPrev, () => navigateThroughSuggestions(-1), {
+  elem: elems.input,
+  preventDefault: true,
 });
 
 // ===== Background Filter =====
